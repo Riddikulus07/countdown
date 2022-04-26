@@ -1,0 +1,105 @@
+<html>
+ 
+<head>
+    <title>CountDown</title>
+    <style>
+       
+        h2{
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: "Poppins", sans-serif;
+        color: transparent;
+        -webkit-text-stroke: 2px white;
+text-align: center;}
+h3{
+    color: white;
+       
+text-align: center;
+}
+.countdown{
+    width: 50%;
+display: flex;
+margin-left: 25%;
+border-style: dotted;
+border-color: white;
+}
+.a{min-height: 10vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.container-day,.container-hours,.container-minutes{text-align: center;
+border-right-style: dotted;
+border-right-color: white;
+padding-right: 60px;
+margin-left: 60px;
+}
+.container-seconds{
+    margin-left: 40px;
+}
+
+       
+        body{
+    background-image:linear-gradient(
+        rgba(4, 9, 30, 0.7),
+        rgba(4, 9, 30, 0.7)
+      ), url(https://editorial.uefa.com/resources/0260-1029cb9c8197-bf6d620b1553-1000/rb_leipzig_v_paris_saint-germain_f.c_-_uefa_champions_league_semi_final.jpeg);
+align-items: center;} h1{
+    font-size: 60px;
+        font-weight: 800;
+        font-family: "Poppins", sans-serif;
+        color: transparent;
+        -webkit-text-stroke: 2px white;
+text-align: center;}
+        .day,.hours,.minutes,.seconds{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+ 
+<body>
+    
+    <section class="a">
+        <div>
+            <h1>UEFA CHAMPIONS LEAGUE 2022 FINAL</h1>
+            <h2>29th May 2022</h2>
+        
+            <div class="countdown">
+         <div class="container-day">
+             <h3 class="day">Time</h3>
+             <h3>Days</h3>
+             </div>
+             <div class="container-hours">
+                <h3 class="hours">Time</h3>
+                <h3>Hours</h3>
+                </div><div class="container-minutes">
+                    <h3 class="minutes">Time</h3>
+                    <h3>Minutes</h3>
+                    </div><div class="container-seconds">
+                        <h3 class="seconds">Time</h3>
+                        <h3>Seconds</h3>
+                              </div></div>
+    </div></section>
+    <script>
+       const countdate = () =>{
+           const countdown_date= new Date('May 29,2022 00:30:00').getTime();
+           const now=new Date().getTime();
+           const gap=countdown_date-now;
+           const seconds=1000;
+           const minutes=60*seconds;
+           const hours=60*minutes;
+           const days=24*hours;
+           const textday= Math.floor(gap/days);
+           const texthours=Math.floor((gap%days)/hours);
+           const textminutes=Math.floor((gap%hours)/minutes);         
+           const textseconds=Math.floor((gap%minutes)/seconds);
+       console.log(countdown_date)
+           document.querySelector(".day").innerText= textday;
+           document.querySelector(".hours").innerHTML= texthours;
+           document.querySelector(".minutes").innerText= textminutes;
+           document.querySelector(".seconds").innerText= textseconds;};
+           countdate();  
+           setInterval(countdate,1000);  </script>
+</body>
+ 
+</html>
